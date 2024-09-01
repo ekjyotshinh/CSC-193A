@@ -1,0 +1,141 @@
+/* General Styles */
+body {
+  background: #F2F4F8; /* Light greyish background for contrast */
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333333; /* Dark grey text color */
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: auto 1fr auto;
+  gap: 0px;
+  grid-template-areas:
+    "header header header"
+    "nav main aside"
+    "footer footer footer";
+  min-height: 100vh;
+}
+
+/* Header Styles */
+header {
+  grid-area: header;
+  background-image: url("https://www.example.com/header-image.jpg"); /* Replace with your chosen image URL */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #313866; /* Dark blue */
+  position: relative;
+  text-align: center;
+  padding: 20px 0;
+  color: #FFFFFF; /* White text */
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5em;
+  color: #FFFFFF; /* White text */
+}
+
+/* Navigation Styles */
+nav {
+  grid-area: nav;
+  background-color: #504099; /* Deep blue */
+  padding: 10px 0;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  display: block;
+  padding: 10px 15px;
+  background-color: #FFFFFF; /* White background for links */
+  color: #333333; /* Dark grey text color */
+  text-align: left;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav a:hover {
+  background-color: #974EC3; /* Purple */
+  color: #FFFFFF; /* White text on hover */
+}
+
+nav a.active {
+  background-color: #313866; /* Pink */
+  color: #FFFFFF; /* White text */
+}
+
+/* Main Content Styles */
+main {
+  grid-area: main;
+  background-color: #FFFFFF; /* White background */
+  color: #333333; /* Dark grey text */
+  padding: 25px;
+}
+
+/* Aside Styles */
+aside {
+  grid-area: aside;
+  background-color: #504099; /* Deep blue */
+  color: #FFFFFF; /* White text */
+  padding: 20px;
+  text-align: center;
+}
+
+aside a {
+  color: #293462; /* Pink */
+  text-decoration: underline;
+}
+
+/* Footer Styles */
+footer {
+  grid-area: footer;
+  background-color: #313866; /* Dark blue */
+  background-image: url("https://www.example.com/footer-image.jpg"); /* Replace with your chosen image URL */
+  background-size: 20%;
+  background-repeat: repeat;
+  background-position: top;
+  color: #FFFFFF; /* White text */
+  text-align: center;
+  padding: 10px 0;
+  font-size: 12px;
+}
+
+/* Specific Grid Areas */
+#header .heading {
+  grid-column: 2 / 5;
+  grid-row: 2 / 3;
+}
+
+#nav ul {
+  padding: 0;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "nav"
+      "main"
+      "aside"
+      "footer";
+  }
+
+  nav, aside, footer {
+    text-align: center;
+  }
+
+  nav a {
+    padding: 10px 5px;
+  }
+}
